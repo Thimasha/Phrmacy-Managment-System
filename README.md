@@ -1,1 +1,2 @@
-# sample_project
+# Group Project
+VB.net | Using MYSQL DB
