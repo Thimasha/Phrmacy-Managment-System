@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEFB1329-BAB1-476A-9D59-FD517A0AB766}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Pharmacy_Management_System.Start</StartupObject>
+    <RootNamespace>Pharmacy_Management_System</RootNamespace>
+    <AssemblyName>Pharmacy Management System</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Pharmacy Management System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Pharmacy Management System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.2.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.4.0.2\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Dashboard.Designer.vb">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\DeleteCategory.Designer.vb">
+      <DependentUpon>DeleteCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\DeleteCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\DeleteMedicine.Designer.vb">
+      <DependentUpon>DeleteMedicine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\DeleteMedicine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\Shelves.Designer.vb">
+      <DependentUpon>Shelves.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Shelves.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\DataValidation.vb" />
+    <Compile Include="Login\DbConnection.vb" />
+    <Compile Include="Login\About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment  System\PayDashboard.Designer.vb">
+      <DependentUpon>PayDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payment  System\PayDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment  System\Report_Fill.Designer.vb">
+      <DependentUpon>Report_Fill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payment  System\Report_Fill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\RegDashboard.Designer.vb">
+      <DependentUpon>RegDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\RegDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Add_Employee.Designer.vb">
+      <DependentUpon>Add_Employee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Add_Employee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment  System\Add_Payement.Designer.vb">
+      <DependentUpon>Add_Payement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payment  System\Add_Payement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Add_Supplier.Designer.vb">
+      <DependentUpon>Add_Supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Add_Supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Appointed_Info.Designer.vb">
+      <DependentUpon>Appointed_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Appointed_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Appointed_Info_Details.Designer.vb">
+      <DependentUpon>Appointed_Info_Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Appointed_Info_Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\Category.Designer.vb">
+      <DependentUpon>Category.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Category.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\Categry_Details.Designer.vb">
+      <DependentUpon>Categry_Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Categry_Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment  System\Delete_Payment.Designer.vb">
+      <DependentUpon>Delete_Payment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payment  System\Delete_Payment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Delete_Supplier.Designer.vb">
+      <DependentUpon>Delete_Supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Delete_Supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Details_Employee.Designer.vb">
+      <DependentUpon>Details_Employee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Details_Employee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\Drug_Details.Designer.vb">
+      <DependentUpon>Drug_Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Drug_Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\DrugItem.Designer.vb">
+      <DependentUpon>DrugItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\DrugItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment  System\Payment_System.Designer.vb">
+      <DependentUpon>Payment_System.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payment  System\Payment_System.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Start.Designer.vb">
+      <DependentUpon>Start.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Start.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Supplier_Details.Designer.vb">
+      <DependentUpon>Supplier_Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Supplier_Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Update_Appointed_Info.Designer.vb">
+      <DependentUpon>Update_Appointed_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Update_Appointed_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\Update_Stock.Designer.vb">
+      <DependentUpon>Update_Stock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Update_Stock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Entire.Designer.vb">
+      <DependentUpon>Entire.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Entire.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Drug Managment System\Stock_Details.Designer.vb">
+      <DependentUpon>Stock_Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Stock_Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drug Managment System\Stock.Designer.vb">
+      <DependentUpon>Stock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drug Managment System\Stock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Update_Employee.Designer.vb">
+      <DependentUpon>Update_Employee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Update_Employee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration System\Update_Supplier_Details.Designer.vb">
+      <DependentUpon>Update_Supplier_Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registration System\Update_Supplier_Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Drug Managment System\Dashboard.resx">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\DeleteCategory.resx">
+      <DependentUpon>DeleteCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\DeleteMedicine.resx">
+      <DependentUpon>DeleteMedicine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\Shelves.resx">
+      <DependentUpon>Shelves.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment  System\PayDashboard.resx">
+      <DependentUpon>PayDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment  System\Report_Fill.resx">
+      <DependentUpon>Report_Fill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\RegDashboard.resx">
+      <DependentUpon>RegDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Add_Employee.resx">
+      <DependentUpon>Add_Employee.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment  System\Add_Payement.resx">
+      <DependentUpon>Add_Payement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Add_Supplier.resx">
+      <DependentUpon>Add_Supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Appointed_Info.resx">
+      <DependentUpon>Appointed_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Appointed_Info_Details.resx">
+      <DependentUpon>Appointed_Info_Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\Category.resx">
+      <DependentUpon>Category.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\Categry_Details.resx">
+      <DependentUpon>Categry_Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment  System\Delete_Payment.resx">
+      <DependentUpon>Delete_Payment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Delete_Supplier.resx">
+      <DependentUpon>Delete_Supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Details_Employee.resx">
+      <DependentUpon>Details_Employee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\Drug_Details.resx">
+      <DependentUpon>Drug_Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\DrugItem.resx">
+      <DependentUpon>DrugItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment  System\Payment_System.resx">
+      <DependentUpon>Payment_System.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Start.resx">
+      <DependentUpon>Start.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Supplier_Details.resx">
+      <DependentUpon>Supplier_Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Update_Appointed_Info.resx">
+      <DependentUpon>Update_Appointed_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\Update_Stock.resx">
+      <DependentUpon>Update_Stock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Entire.resx">
+      <DependentUpon>Entire.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\Stock_Details.resx">
+      <DependentUpon>Stock_Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drug Managment System\Stock.resx">
+      <DependentUpon>Stock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Update_Employee.resx">
+      <DependentUpon>Update_Employee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration System\Update_Supplier_Details.resx">
+      <DependentUpon>Update_Supplier_Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image20210828114815.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicamento-gif-9.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-08-23 at 8.47.56 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0964c804-2a91-441c-b0a9-cd088f9464f9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy-with-nurse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0964c804-2a91-441c-b0a9-cd088f9464f91.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy-with-nurse-in-counter-drugstore-cartoon-character-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy-with-nurse-in-counter-drugstore-cartoon-character-vector1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loader2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %285%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3000547.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grn-nurse-300x3001-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grn-nurse-300x3001-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SOF00135.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grn-nurse-300x3001-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SOF001351.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-delete-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1433241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erkek-mavi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy-logo-vector_23987-171.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-person-info-icon-stock-illustration__k9930218.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\03.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-blue-geometric-hexagons-shiny-science-technology-concept-background-template-brochure-design-abstract-blue-114460137 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-diagnosis-isometric-vector-illustration-female-patient-professional-consultation-digital-platform-healthcare-168518647.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-diagnosis-isometric-vector-illustration-female-patient-professional-consultation-digital-platform-healthcare-1685186471.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-diagnosis-isometric-vector-illustration-female-patient-professional-consultation-digital-platform-healthcare-1685186472.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-pharmacy-flat-composition-online-pharmacy-flat-search-medicine-headline-provisor-advises-patient-187844758.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-diagnosis-isometric-vector-illustration-female-patient-professional-consultation-digital-platform-healthcare-1685186473.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy-business-medicine-drug-store-pill-bottle-online-drugstore-infographic-background-flat-cartoon-vector-illustration-156649250.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20546.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector-concept-payment-options-flat-style-51351795.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\205461.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine-pharmacy-drugs-pills-medicament-bottles-medical-equipment-vector-flat-icons-medicine-pharmacy-drugs-pills-medicament-120334142.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmaceutics-pharmacy-drug-store-pills-flat-d-isometric-vector-cure-healthcare-medical-prescription-medicine-chest-first-aid-kit-66196104.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon-plus-vector-illustration-224241886.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-shopping-cart-orange-tick-sign-button-simple-icon-isolated-white-background-store-trolley-wheels-flat-vector-185080481.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browser-icon-website-design-desktop-envelopment-development-premium-pack-browser-vector-flat-color-icon-180009226.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browser-icon-website-design-desktop-envelopment-development-premium-pack-browser-vector-flat-color-icon-1800092261.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drug-store-28071393.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\concept-pharmaceutics-medicine-production-young-cheerful-woman-pharmacist-works-pharmacy-concept-pharmaceutics-182503985.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine-pharmacy-drugs-pills-medicament-bottles-medical-equipment-vector-flat-icons-medicine-pharmacy-drugs-pills-medicament-1203341421.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2721886.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sec04_icon03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3589034.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment-schedule-day-calendar-payday-deadline-money-overdue-vector-88104580.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\concept-pharmaceutics-medicine-production-young-cheerful-woman-pharmacist-works-pharmacy-concept-pharmaceutics-1825039851.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shelves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
